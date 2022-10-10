@@ -1,13 +1,17 @@
-import React,{useEffect} from 'react';
-import logo from './logo.svg';
+import React,{useEffect, useState} from 'react';
 import './App.css';
 import {getQuizDetails} from './services/quiz_service'
-
+import {Quiz} from './types/quiz_types'
 function App() {
+
+
+  let[quiz,setQuiz]=useState<Quiz[]>([])
+
   useEffect(()=>{
    async function fetchData(){
-    const questions= await getQuizDetails(5,'easy');
-    console.log("questions");
+    const questions:Quiz[]= await getQuizDetails(5,'easy');
+    console.log(questions);
+    setQuiz(questions);
    }
    fetchData()
   ;
