@@ -18,8 +18,8 @@ const QuestionCard:React.FC<questionPropsType>=({question,options,callback})=>{
                     options.map((opt:string,ind:number)=>{
                         return(
                             <div>
-                                <label>
-                                    <input type="radio" name="opt" required value={opt} className="radio" checked={selectedAns===opt} onChange={handelSelection}/>
+                                <label className="radio">
+                                    <input type="radio" name="opt" required value={opt}  checked={selectedAns===opt} onChange={handelSelection}/>
                                     {opt}
                                 </label>
                             </div>
