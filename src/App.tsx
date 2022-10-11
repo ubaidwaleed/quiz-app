@@ -32,7 +32,7 @@ setScore(++score);
     setCurrentStep(++currentStep);
   }
 else{
-  alert("Your final score is "+score+" out of "+quiz.length)  
+  
   setShowResult(true);
 }
 }
@@ -42,8 +42,8 @@ else{
   }
   if(showResult){
     return(<div className='question-container'>
-      <h3>Result:</h3>
-      <p className='result-text'>Your final score is {score} out of {quiz.length}</p>
+      <h2>Result:</h2>
+      <p className='result-text'>Your final score is <b>{score}</b> out of <b>{quiz.length}</b>.</p>
     </div>)
   }
   return (
