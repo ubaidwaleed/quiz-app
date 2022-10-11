@@ -1,0 +1,17 @@
+.question-container{
+    max-width: 500px;
+    box-shadow: 0px 5px 24px #867a7a;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+.question-form > .submit{
+width:100%;
+border:none;
+background-color: #1c1c4c;
+color: wheat;
+border-radius: 5px;
+padding: 7px;
+margin: 5px;
+
+}
