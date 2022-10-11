@@ -10,6 +10,7 @@ const quiz:QuestionType[]=results.map((questionObj:Quiz)=>{
     return{
         question:questionObj.question,
         answer:questionObj.correct_answer,
+        correct_answer:questionObj.correct_answer,
         option:shuffleArray(questionObj.incorrect_answers.concat(questionObj.correct_answer))
     }
 });

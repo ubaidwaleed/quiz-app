@@ -9,6 +9,7 @@ function App() {
   let[quiz,setQuiz]=useState<QuestionType[]>([])
 
   let[currentStep,setCurrentStep]=useState(0)
+  let[score,setScore]=useState(0)
   useEffect(()=>{
    async function fetchData(){
     const questions:QuestionType[]= await getQuizDetails(5,'easy');
@@ -18,13 +19,21 @@ function App() {
    fetchData()
   ;
   },[]);
-const handleSubmit=(e:any)=>{
+const handleSubmit=(e:React.FormEvent<EventTarget>,userAns:string)=>{
   e.preventDefault();
+  
+  const currentQuestion:QuestionType=quiz[currentStep];
+  console.log("corrct ans:"+currentQuestion.correct_answer+"--user selected:"+userAns)
+if(userAns===currentQuestion.correct_answer){
+setScore(++score);
+}
   if(currentStep!==quiz.length-1){
     setCurrentStep(++currentStep);
   }
 else{
-  alert("Quiz Completed.")  
+  alert("Your final score is "+score+" out of "+quiz.length)  
+  setCurrentStep(0);
+  setScore(0);
 }
 }
   if(!quiz.length){
